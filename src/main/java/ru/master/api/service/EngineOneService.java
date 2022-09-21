@@ -9,6 +9,6 @@ public interface EngineOneService {
   @NonNull
   String enrollProcess(@NonNull List<String> names, @NonNull List<PersonDto> persons);
 
-
-
+  @NonNull
+  List<String> enrollCrossing(@NonNull List<String> names, @NonNull List<PersonDto> persons);
 }

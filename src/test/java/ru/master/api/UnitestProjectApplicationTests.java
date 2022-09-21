@@ -284,9 +284,6 @@ class UnitestProjectApplicationTests {
 
   }
 
-
-
-
   @Test
   void Test6() {
     Gender personSex = Gender.MALE;
@@ -296,7 +293,36 @@ class UnitestProjectApplicationTests {
 
 
 
+  @Test
+  void testCrossData() {
+    List<String> lstNames = List.of("Игорюля", "Игорямба", "Игорь", "Игоряша", "Игоряша");
+    List<PersonDto> lstPersons = List.of(
+        PersonDto
+            .builder()
+            .firstName("Игорюля")
+            .age(20)
+            .build(),
+        PersonDto
+            .builder()
+            .firstName("Игорюля")
+            .age(20)
+            .build(),
+        PersonDto
+            .builder()
+            .firstName("Игорь")
+            .age(10)
+            .build(),
+        PersonDto
+            .builder()
+            .firstName("Игорямба")
+            .age(30)
+            .build()
+    );
 
+    List<String> result = engineOne.enrollCrossing(lstNames, lstPersons);
+
+    //Assertions.assertEquals("Игорь", result);
+  }
 
 
 }
